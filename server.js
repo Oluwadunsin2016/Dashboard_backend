@@ -22,9 +22,11 @@ app.use(cors({
 // Routes
 app.use('/api', exchangeRateRoutes);
 
-app.get((req, res) => {
+app.get("/",(req, res) => {
 return res.status(200).json({message:'Welcome ...'})
 })
+
+
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI, {
