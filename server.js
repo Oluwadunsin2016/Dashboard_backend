@@ -20,7 +20,7 @@ app.use(cors({
   app.use(express.json()); 
 
 // Routes
-app.use('/api', exchangeRateRoutes);
+app.use('/api/', exchangeRateRoutes);
 
 app.get("/",(req, res) => {
 return res.status(200).json({message:'Welcome ...'})
