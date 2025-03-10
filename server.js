@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const exchangeRateRoutes = require('./routes/exchangeRateRoutes');
+const userRoutes = require('./routes/userRoutes');
+const investmentRoutes = require('./routes/investmentRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -21,6 +23,8 @@ app.use(cors({
 
 // Routes
 app.use('/api/', exchangeRateRoutes);
+app.use('/api/user/', userRoutes);
+app.use('/api/investment/', investmentRoutes);
 
 app.get("/",(req, res) => {
 return res.status(200).json({message:'Welcome ...'})
